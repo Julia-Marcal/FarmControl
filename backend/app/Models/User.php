@@ -59,4 +59,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function farms()
+    {
+        return $this->belongsToMany(Farm::class);
+    }
+
 }
