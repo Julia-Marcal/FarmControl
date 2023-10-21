@@ -14,7 +14,7 @@ class Cows extends Model
         'baby_cows',
         'adult_cows',
         'expenses_adults_cows',
-        'expenses_babies_cows',
+        'expenses_child_cows',
         'total_expenses_cows'
     ];
 
@@ -22,10 +22,10 @@ class Cows extends Model
     {
         return [
             'total_of_cows' => 'required|numeric',
-            'baby_cows' => 'numeric',
+            'child_cows' => 'numeric',
             'adult_cows' => 'numeric',
             'expenses_adults_cows' => 'numeric',
-            'expenses_babies_cows' => 'numeric',
+            'expenses_child_cows' => 'numeric',
             'total_expenses_cows' => 'numeric'
         ];
     }

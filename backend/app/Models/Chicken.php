@@ -14,7 +14,7 @@ class Chicken extends Model
         'baby_chickens',
         'adult_chickens',
         'expenses_adults_chickens',
-        'expenses_babies_chickens',
+        'expenses_child_chickens',
         'total_expenses_chickens'
     ];
 
@@ -22,10 +22,10 @@ class Chicken extends Model
     {
         return [
             'total_of_chickens' => 'required|numeric',
-            'baby_chickens' => 'numeric',
+            'child_chickens' => 'numeric',
             'adult_chickens' => 'numeric',
             'expenses_adults_chickens' => 'numeric',
-            'expenses_babies_chickens' => 'numeric',
+            'expenses_child_chickens' => 'numeric',
             'total_expenses_chickens' => 'numeric'
         ];
     }

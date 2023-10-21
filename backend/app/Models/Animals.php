@@ -22,11 +22,11 @@ class Animals extends Model
     {
         return [
             'total_of_animals' => 'required|numeric',
-            'baby_animals' => 'numeric',
+            'child_animals' => 'numeric',
             'adult_animals' => 'numeric',
+            'total_expenses' => 'numeric',
             'expenses_adults' => 'numeric',
-            'expenses_babies' => 'numeric',
-            'total_expenses' => 'numeric'
+            'expenses_child' => 'numeric',
         ];
     }
 }

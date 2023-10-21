@@ -34,7 +34,7 @@ class User extends Authenticatable
             'password' => 'required|string|min:8',
             'phone' => 'nullable|string|max:20',
             'last_name' => 'nullable|string|max:255',
-            'farms' => 'nullable|array',
+            'farms' => 'nullable|json|exists:farm_id',
         ];
     }
 
