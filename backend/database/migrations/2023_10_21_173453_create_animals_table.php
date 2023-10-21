@@ -11,14 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        {
-        Schema::create('farms', function (Blueprint $table) {
+        Schema::create('animals', function (Blueprint $table) {
             $table->id();
-            $table->json('owners');
+            $table->foreignId('farm_id')->constrained();
             $table->integer('total_of_animals');
+            $table->integer('child_animals');
+            $table->integer('adult_animals');
+            $table->integer('total_expenses');
+            $table->integer('expenses_adults');
+            $table->integer('expenses_child');
             $table->timestamps();
         });
-    }
     }
 
     /**
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('animals');
     }
 };
