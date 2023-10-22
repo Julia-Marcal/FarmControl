@@ -8,12 +8,16 @@ class CreateFarmUserTable extends Migration
 {
     public function up(): void
     {
-        Schema::create('farm_user', function (Blueprint $table) {
+         Schema::create('farm_user', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('farm_id')->constrained();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('farm_id');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('farm_id')->references('id')->on('farms')->onDelete('cascade');
         });
+
     }
 
     public function down(): void

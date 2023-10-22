@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('total_of_animals');
             $table->timestamps();
         });
-    }
+        }
     }
 
     /**
