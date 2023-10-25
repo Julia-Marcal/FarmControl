@@ -14,7 +14,6 @@ return new class extends Migration
         {
         Schema::create('farms', function (Blueprint $table) {
             $table->id();
-            $table->json('owners');
             $table->integer('total_of_animals');
             $table->timestamps();
         });

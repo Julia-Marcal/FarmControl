@@ -3,23 +3,21 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Farm;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class UserController extends Controller
+class FarmController extends Controller
 {
     protected $model;
 
-    public function __construct(User $Users)
+    public function __construct(Farm $farms)
     {
-        $this->model = $Users;
+        $this->model = $farms;
     }
 
     public function index()
     {
-
-        $data = DB::select('SELECT users.*, farm_user.* FROM users INNER JOIN farm_user ON farm_user.user_id = users.id');
+        $data = $this->model->all();
         return response()->json($data);
     }
 
@@ -34,4 +32,3 @@ class UserController extends Controller
         return response()->json($data, 201);
     }
 }
-

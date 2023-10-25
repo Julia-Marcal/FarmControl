@@ -16,7 +16,6 @@ class FarmSeeder extends Seeder
         // Sample data for seeding
         $farms = [
             [
-                'owners' => json_encode(['user_id' => 1]),
                 'total_of_animals' => 0,
                 'created_at' => now(),
                 'updated_at' => now(),

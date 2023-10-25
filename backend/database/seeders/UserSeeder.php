@@ -24,7 +24,6 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('123456'),
                 'phone' => '1234567890',
                 'last_name' => 'Marcal',
-                'farms' => json_encode(['farm_id' => 1]),
                 'remember_token' => Str::random(10),
                 'created_at' => now(),
                 'updated_at' => now(),

@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('password');
             $table->string('phone');
             $table->string('last_name');
-            $table->json('farms');
             $table->rememberToken();
             $table->timestamps();
         });
