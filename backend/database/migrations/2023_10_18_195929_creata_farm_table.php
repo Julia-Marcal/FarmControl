@@ -15,6 +15,11 @@ return new class extends Migration
         Schema::create('farms', function (Blueprint $table) {
             $table->id();
             $table->integer('total_of_animals');
+            $table->integer('child_animals');
+            $table->integer('adult_animals');
+            $table->integer('total_expenses');
+            $table->integer('expenses_adults');
+            $table->integer('expenses_child');
             $table->timestamps();
         });
         }
