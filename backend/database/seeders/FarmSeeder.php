@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class FarmSeeder extends Seeder
 {
@@ -16,9 +17,12 @@ class FarmSeeder extends Seeder
         // Sample data for seeding
         $farms = [
             [
-                'total_of_animals' => 0,
-                'created_at' => now(),
-                'updated_at' => now(),
+                'total_of_animals'  => 100,
+                'child_animals'     => 30,
+                'adult_animals'     => 70,
+                'total_expenses'    => 5000,
+                'expenses_adults'   => 3500,
+                'expenses_child'    => 1500,
             ],
         ];
 
