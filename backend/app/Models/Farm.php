@@ -11,7 +11,12 @@ class Farm extends Model
 
      protected $fillable = [
         'owners',
-        'total_of_animals'
+        'total_of_animals',
+        'baby_animals',
+        'adult_animals',
+        'expenses_adults',
+        'expenses_babies',
+        'total_expenses'
     ];
 
     public function rules()
@@ -19,6 +24,12 @@ class Farm extends Model
         return [
             'owners' => 'required|json|exists:user_id',
             'total_of_animals' => 'required|numeric',
+            'total_of_animals' => 'required|numeric',
+            'child_animals' => 'numeric',
+            'adult_animals' => 'numeric',
+            'total_expenses' => 'numeric',
+            'expenses_adults' => 'numeric',
+            'expenses_child' => 'numeric',
         ];
     }
 
