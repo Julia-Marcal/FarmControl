@@ -19,7 +19,9 @@ class UserController extends Controller
     public function index()
     {
 
-        $data = DB::select('SELECT users.*, farm_user.* FROM users INNER JOIN farm_user ON farm_user.user_id = users.id');
+        $data = DB::select('SELECT users.id, users.name, users.email, users.phone, users.last_name, farm_user.user_id, farm_user.farm_id
+        FROM users
+        INNER JOIN farm_user ON farm_user.user_id = users.id');
         return response()->json($data);
     }
 
