@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Farm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+
 
 class FarmController extends Controller
 {
@@ -29,8 +31,14 @@ class FarmController extends Controller
 
         $dataForm = $request->all();
 
-        $data = $this->model->create($dataForm);
+        $farm = $this->model->create($dataForm);
 
-        return response()->json($data, 201);
+        // Assuming $dataForm['owners'] is an array of user IDs.
+        DB::table('farm_user')->insert([
+            'user_id' => $dataForm['owners'],
+            'farm_id' => $farm->id,
+        ]);
+
+        return response()->json($farm, 201);
     }
 }
