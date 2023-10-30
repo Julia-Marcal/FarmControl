@@ -8,5 +8,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Api',], function () {
     Route::post('users/', 'UserController@store');
 
     Route::get('farms/', 'FarmController@index');
+    Route::post('farms/', 'FarmController@store');
 });
 
