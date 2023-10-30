@@ -22,8 +22,7 @@ class Farm extends Model
     public function rules()
     {
         return [
-            'owners' => 'required|json|exists:user_id',
-            'total_of_animals' => 'required|numeric',
+            'owners' => 'required',
             'total_of_animals' => 'required|numeric',
             'child_animals' => 'numeric',
             'adult_animals' => 'numeric',
