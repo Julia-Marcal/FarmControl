@@ -17,6 +17,7 @@ class FarmSeeder extends Seeder
         // Sample data for seeding
         $farms = [
             [
+                'owner_id' => 1,
                 'total_of_animals'  => 100,
                 'child_animals'     => 30,
                 'adult_animals'     => 70,
