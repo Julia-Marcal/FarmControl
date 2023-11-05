@@ -31,13 +31,14 @@ class FarmController extends Controller
 
         $dataForm = $request->all();
 
-        $farm = $this->model->create($dataForm);
+        $dataForm['total_of_animals'] = 0;
+        $dataForm['baby_animals'] = 0;
+        $dataForm['adult_animals'] = 0;
+        $dataForm['expenses_adults'] = 0;
+        $dataForm['expenses_babies'] = 0;
+        $dataForm['total_expenses'] = 0;
 
-        // Assuming $dataForm['owners'] is an array of user IDs.
-        DB::table('farm_user')->insert([
-            'user_id' => $dataForm['owners'],
-            'farm_id' => $farm->id,
-        ]);
+        $farm = $this->model->create($dataForm);
 
         return response()->json($farm, 201);
     }
